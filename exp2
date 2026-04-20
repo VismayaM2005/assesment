@@ -1,0 +1,15 @@
+git branch
+git branch feature-branch
+git checkout feature-branch
+echo "Feature work" >> README.txt
+git add .
+git commit -m "Added new feature in feature branch"
+git checkout main
+echo "Main branch change" >> README.txt
+git add .
+git commit -m "Updated file in main branch"
+git merge feature-branch
+git add README.txt
+git commit
+git log --oneline
+git branch -d feature-branch
