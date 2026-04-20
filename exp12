@@ -1,0 +1,4 @@
+mbn archetype:generate
+cd sample
+mvn pacakge
+mvn clean test
