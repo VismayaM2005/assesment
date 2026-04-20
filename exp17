@@ -1,0 +1,12 @@
+docker run -d -p 8080:80 nginx
+partb
+docker volume create myvolume
+docker volume ls
+docker run -it -v myvolume:/data ubuntu bash
+cd /data
+echo "Docker Volume Persistence Test" > test.txt
+exit
+part c
+docker run -d -p 8081:80 -v myvolume:/usr/share/nginx/html nginx
+docker run -it -v my-volume:/data ubuntu bash
+echo "<h1>Hello<h1>" >/data/index.html
