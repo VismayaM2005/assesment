@@ -1,0 +1,71 @@
+BankService.java
+public class BankService {
+    public static void main(String[] args) {
+        double balance = 1000;
+
+        // Deposit
+        double deposit = 500;
+        if (deposit <= 0) {
+            System.out.println("Deposit must be positive");
+            return;
+        }
+        balance += deposit;
+
+        // Withdraw
+        double withdraw = 300;
+        if (withdraw <= 0 || withdraw > balance) {
+            System.out.println("Invalid withdrawal");
+            return;
+        }
+        balance -= withdraw;
+
+        // Display final balance
+        System.out.println("Final Balance: " + balance);
+    }
+}
+
+
+OR 
+package com.bnmit;
+
+class BankAccount {
+    private double balance;
+
+    public BankAccount(double initialBalance) {
+        if (initialBalance < 0)
+            throw new IllegalArgumentException("Initial balance cannot be negative");
+        this.balance = initialBalance;
+    }
+
+    public void deposit(double amount) {
+        if (amount <= 0)
+            throw new IllegalArgumentException("Deposit must be positive");
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= 0 || amount > balance)
+            throw new IllegalArgumentException("Invalid withdrawal");
+        balance -= amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+public class BankService {
+    public static void main(String[] args) {
+        BankAccount acc = new BankAccount(1000);
+        acc.deposit(500);
+        acc.withdraw(300);
+        System.out.println("Final Balance: " + acc.getBalance());
+    }
+}
+
+mvn archetype:generate
+cd sample
+mvn clean
+mvn package
+cd target
+java -cp sample-app-1.0-SNAPSHOT.jar com.bnmit.BankService
