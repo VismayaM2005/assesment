@@ -1,0 +1,8 @@
+git tag -a v1.0 -m "Version 1.0 release"
+git tag
+git show v1.0
+git tag -l "v1.*"
+git push origin v1.0
+git push --tags
+git tag -d v1.0
+git push origin -d v1.0
