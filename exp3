@@ -1,0 +1,10 @@
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+git init
+git remote add origin https://github.com/YourUsername/git-lab-demo.git
+git pull origin main
+git add main.py
+git commit -m "Add main.py file"
+git push origin main / git push -u origin main
+Change in github
+git pull origin main
