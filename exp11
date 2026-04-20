@@ -1,0 +1,58 @@
+Calculator.java
+package finals;
+
+public class Calculator {
+
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int sub(int a, int b) {
+        return a - b;
+    }
+
+    public int mul(int a, int b) {
+        return a * b;
+    }
+
+    public int divide(int a, int b) {
+        if (b == 0)
+            throw new IllegalArgumentException("Cannot divide by 0");
+        return a / b;
+    }
+}
+CalculatorTest.java
+package finals;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class CalculatorTest {
+
+    Calculator cal = new Calculator();
+
+    @Test
+    void addtest() {
+        assertEquals(10, cal.add(5, 5));
+    }
+
+    @Test
+    void subtest() {
+        assertEquals(2, cal.sub(5, 3));
+    }
+
+    @Test
+    void multest() {
+        assertEquals(15, cal.mul(5, 3));
+    }
+
+    @Test
+    void dividetest() {
+        Exception exp = assertThrows(
+                IllegalArgumentException.class,
+                () -> cal.divide(10, 0)
+        );
+        assertEquals("Cannot divide by 0", exp.getMessage());
+    }
+}
