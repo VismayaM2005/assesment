@@ -1,0 +1,8 @@
+add pom.xml and src
+jenkins->maven
+Triggers- build whehnever snapshot and pollscm, run only when build succeeds
+build-> root POM:pom.xml
+goals and option->package
+
+add post build options->archeive the artifacts
+target/*.jar
