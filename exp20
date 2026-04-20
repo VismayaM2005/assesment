@@ -1,0 +1,18 @@
+Create a Pipeline Job.
+Select Pipeline script from SCM
+SCM = Git
+Paste your GitHub repository URL
+Branch = */main
+Script Path = Jenkinsfile
+http://localhost:8087/sample-webapp
+
+C:\tomcat\conf\server.xml
+<Connector port="8081" protocol="HTTP/1.1"
+           connectionTimeout="20000"
+           redirectPort="8443" />
+
+<tomcat-users>
+<role rolename="manager-gui"/>
+<user username="admin" password="admin" roles="manager-gui"/>
+http://localhost:8081/manager/html
+http://localhost:8081/sample-webapp
