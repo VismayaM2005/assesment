@@ -1,0 +1,9 @@
+task 1
+docker run hello-world
+task 2
+docker pull nginx
+docker run -d -p 8080:80 nginx
+task 3
+docker ps
+docker stop <id>
+docker rm <id>
