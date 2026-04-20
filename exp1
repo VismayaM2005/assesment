@@ -1,1 +1,12 @@
 https://klipit.in/ash08038
+git init
+git config --global user.name "Your Name"
+git config --global user.email your_email@example.com
+echo "This is my first Git experiment" > README.txt
+git status
+git add .
+git commit -m "Initial commit"
+echo "Git tracks file changes" >> README.txt
+git add README.txt
+git commit -m "Updated README file"
+git log
