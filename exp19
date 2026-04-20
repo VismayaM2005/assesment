@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone Code') {
+            steps {
+                git branch: 'main',url: 'https://github.com/VismayaM2005/exp19.git'
+                
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build -t my-app .'
+            }
+        }
+        stage('Run Container') {
+            steps {
+                bat 'docker run -d my-app'
+            }
+        }
+    }
+}
+
+OR
+docker build -t java-app .
+docker run -d -t java-app
